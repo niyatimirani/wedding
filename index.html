@@ -1,0 +1,1035 @@
+fi<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Makhija & Niyati Mirani - Royal Wedding Invitation</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome & Canvas Confetti -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --bg-outer: #071A35;
+            --bg-main: #071A35;
+            --bg-card: rgba(18, 59, 104, 0.92);
+            --bg-card-alt: rgba(122, 23, 53, 0.92);
+            --text-gold: #D9B56D;
+            --text-gold-light: #F3D18A;
+            --border-gold: #D9B56D;
+            --accent-red: #7A1735;
+            --nav-bg: rgba(7, 26, 53, 0.96);
+        }
+
+        body {
+            background-color: var(--bg-outer);
+            color: #F5F7FA;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        .font-royal-decorative { font-family: 'Cinzel Decorative', serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-script { font-family: 'Great Vibes', cursive; }
+
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FFF0B3 0%, #E5C158 50%, #A67C1E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            border: 1.5px solid var(--border-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+        }
+
+        .royal-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .royal-card:hover {
+            border-color: var(--border-gold);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Equalizer Animation for Audio */
+        .eq-bar {
+            width: 3px;
+            background-color: #E5C158;
+            border-radius: 2px;
+            animation: eqPulse 1s ease-in-out infinite alternate;
+        }
+        .eq-bar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+        .eq-bar:nth-child(2) { height: 14px; animation-delay: 0.3s; }
+        .eq-bar:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+        .eq-bar:nth-child(4) { height: 16px; animation-delay: 0.4s; }
+
+        @keyframes eqPulse {
+            0% { transform: scaleY(0.3); }
+            100% { transform: scaleY(1.2); }
+        }
+
+        /* Pulse glow button */
+        @keyframes openBtnPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.5), inset 0 0 15px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 35px rgba(212, 175, 55, 0.85), inset 0 0 25px rgba(255, 215, 0, 0.6); }
+        }
+        .pulse-btn {
+            animation: openBtnPulse 2.5s infinite ease-in-out;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-main); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--text-gold), #8A6311);
+            border-radius: 4px;
+        }
+
+        /* ===== CINEMATIC REFERENCE COVER ===== */
+        #coverScreen.reference-cover {
+            min-height: 100vh;
+            width: 100%;
+            background: #120804;
+            isolation: isolate;
+            position: relative;
+        }
+        .reference-cover .cover-backdrop {
+            position: absolute;
+            inset: 0;
+            background-image: url('Royal Indian Wedding Invitation.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(24px) saturate(1.18) brightness(.52);
+            transform: scale(1.08);
+            opacity: .82;
+            z-index: -4;
+        }
+        .reference-cover .cover-warm-glow {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 52%, rgba(255,196,92,.12), transparent 38%),
+                linear-gradient(90deg, rgba(25,7,2,.42), transparent 20%, transparent 80%, rgba(25,7,2,.42)),
+                linear-gradient(180deg, rgba(10,3,1,.16), transparent 28%, transparent 76%, rgba(10,3,1,.38));
+            pointer-events: none;
+            z-index: 2;
+        }
+        .reference-cover .cover-frame {
+            position: relative;
+            width: 100%;
+            height: 100svh;
+            min-height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .reference-cover .cover-art {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            filter: saturate(1.05) contrast(1.03);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .reference-cover .cover-art-shine {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(105deg, transparent 35%, rgba(255,231,170,.08) 47%, rgba(255,255,255,.14) 50%, rgba(255,231,170,.06) 53%, transparent 65%);
+            transform: translateX(-120%);
+            animation: goldSweep 9s ease-in-out infinite;
+            mix-blend-mode: screen;
+        }
+        .reference-cover .cover-vignette {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse at center, transparent 48%, rgba(0,0,0,.48) 100%);
+            z-index: 3;
+        }
+        .reference-cover .cover-particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 4;
+            overflow: hidden;
+        }
+        .reference-cover .cover-particles span {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255,224,150,.9);
+            box-shadow: 0 0 10px rgba(255,199,88,.8);
+            animation: sparkleFloat 5s ease-in-out infinite;
+        }
+        .reference-cover .cover-hotspot {
+            position: absolute;
+            z-index: 8;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+        .reference-cover .cover-hotspot:focus-visible {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 5px rgba(212,175,55,.9);
+            border-radius: 999px;
+        }
+        .reference-cover .hotspot-music { left: 2.4%; top: 3.1%; width: 15%; height: 11%; }
+        .reference-cover .hotspot-open { left: 35%; top: 68%; width: 30%; height: 11%; }
+        .reference-cover .hotspot-scroll { left: 44%; bottom: 2.8%; width: 12%; height: 10%; }
+
+        @keyframes goldSweep {
+            0%, 45% { transform: translateX(-120%); opacity: 0; }
+            55% { opacity: 1; }
+            70%, 100% { transform: translateX(120%); opacity: 0; }
+        }
+        @keyframes sparkleFloat {
+            0%, 100% { transform: translate3d(0, 18px, 0) scale(.7); opacity: 0; }
+            25% { opacity: .8; }
+            50% { transform: translate3d(8px, -12px, 0) scale(1); opacity: 1; }
+            75% { opacity: .45; }
+        }
+        @media (max-width: 700px) {
+            .reference-cover .cover-art {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                object-position: center center;
+            }
+            .reference-cover .hotspot-open { left: 31%; top: 67%; width: 38%; height: 13%; }
+            .reference-cover .hotspot-music { left: 1%; top: 2%; width: 23%; height: 14%; }
+        }
+
+        /* ===== FIXED ROYAL NAVY + ROYAL BLUE THEME ===== */
+        :root {
+            --bg-outer: #071A35;
+            --bg-main: #071A35;
+            --bg-card: rgba(18, 59, 104, 0.92);
+            --bg-card-alt: rgba(122, 23, 53, 0.92);
+            --text-gold: #D9B56D;
+            --text-gold-light: #F3D18A;
+            --border-gold: #D9B56D;
+            --accent-red: #7A1735;
+            --nav-bg: rgba(7, 26, 53, 0.96);
+        }
+
+        .event-grid { align-items: stretch; }
+        .event-grid .event-card {
+            width: 100%;
+            height: 430px;
+            min-height: 430px;
+        }
+        .event-grid .event-card > div:first-child { flex: 1; }
+        .event-grid .event-card h3 { min-height: 3.6rem; }
+        .event-grid .event-card p { max-width: 100%; }
+
+        /* Map the existing Tailwind gold utility shades to the requested palette. */
+        [class~="text-amber-400"] { color: #D9B56D !important; }
+        [class~="text-amber-300"] { color: #F3D18A !important; }
+        [class~="text-amber-200"] { color: #FFF8EA !important; }
+        [class~="text-amber-100"] { color: #FFF8EA !important; }
+        [class~="border-amber-400"] { border-color: #D9B56D !important; }
+        [class*="border-amber-400/"] { border-color: rgba(217,181,109,.55) !important; }
+        [class*="bg-amber-500/"] { background-color: rgba(217,181,109,.16) !important; }
+        [class*="bg-amber-400/"] { background-color: rgba(217,181,109,.12) !important; }
+        [class*="hover:bg-amber-400"]:hover { background-color: #D9B56D !important; }
+        [class*="hover:text-black"]:hover { color: #071A35 !important; }
+
+        @media (max-width: 767px) {
+            .event-grid .event-card { height: auto; min-height: 430px; }
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden selection:bg-amber-400 selection:text-black">
+
+    <!-- Falling Petals Canvas Overlay -->
+    <canvas id="petalsCanvas" class="fixed inset-0 pointer-events-none z-30 w-full h-full opacity-90"></canvas>
+     <audio id="weddingMusic" loop preload="auto">
+    <source src="my/Mere Pass Tum Raho (Flute Version) - ML Records Bhakti (128k).mp3" type="audio/mpeg">
+
+</audio>
+    <!-- Top Left Music Equalizer / Audio Toggle Widget -->
+    <div class="fixed top-5 left-5 z-50 flex items-center space-x-3">
+        <button onclick="toggleAudio()" class="flex items-center space-x-2 bg-black/80 border border-amber-400/80 px-3.5 py-2 rounded-full shadow-2xl backdrop-blur-md hover:scale-105 transition-all">
+            <div id="eqVisualizer" class="hidden flex items-end space-x-0.5 h-4">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+            <i id="audioIcon" class="fa-solid fa-music text-amber-300 text-sm"></i>
+            <span id="audioText" class="text-[11px] font-cinzel font-semibold text-amber-200 tracking-wider">Play Music</span>
+        </button>
+    </div>
+
+    <!-- CINEMATIC REFERENCE COVER -->
+    <section id="coverScreen" class="reference-cover relative w-full overflow-hidden select-none" aria-label="Lucky and Niyati wedding invitation opening">
+        <div class="cover-backdrop" aria-hidden="true"></div>
+        <div class="cover-frame">
+            <img class="cover-art" src="my/final image.png" alt="Lucky and Niyati royal Indian wedding invitation" draggable="false">
+            <div class="cover-art-shine" aria-hidden="true"></div>
+            <div class="cover-warm-glow" aria-hidden="true"></div>
+            <div class="cover-vignette" aria-hidden="true"></div>
+
+            <button class="cover-hotspot hotspot-music" onclick="toggleAudio()" aria-label="Play or pause wedding music"></button>
+            <button class="cover-hotspot hotspot-open" onclick="openInvitation()" aria-label="Open invitation"></button>
+            <button class="cover-hotspot hotspot-scroll" onclick="openInvitation()" aria-label="Scroll down to invitation"></button>
+
+            <div class="cover-particles" aria-hidden="true">
+                <span style="left:8%;top:22%;animation-delay:.2s"></span>
+                <span style="left:17%;top:65%;animation-delay:1.2s"></span>
+                <span style="left:28%;top:38%;animation-delay:2.1s"></span>
+                <span style="left:72%;top:27%;animation-delay:1.6s"></span>
+                <span style="left:83%;top:54%;animation-delay:2.8s"></span>
+                <span style="left:91%;top:74%;animation-delay:.9s"></span>
+                <span style="left:55%;top:16%;animation-delay:3.2s"></span>
+                <span style="left:47%;top:82%;animation-delay:1.9s"></span>
+                <span style="left:35%;top:76%;animation-delay:3.7s"></span>
+                <span style="left:64%;top:62%;animation-delay:2.5s"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 left-0 w-full z-40 py-3.5 border-b border-amber-400/40 shadow-2xl backdrop-blur-md" id="navbar" style="background-color: var(--nav-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <a href="#coverScreen" class="font-royal-decorative text-lg sm:text-2xl font-bold gold-text-gradient tracking-wider">
+                Lucky & Niyati
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6 text-[11px] font-cinzel font-semibold tracking-widest uppercase text-amber-100">
+                <a href="#coupleDetails" class="hover:text-amber-400 transition-colors">The Couple</a>
+                <a href="#events" class="hover:text-amber-400 transition-colors">Shahi Functions</a>
+                <a href="#blessings" class="hover:text-amber-400 transition-colors">Aashirvaad</a>
+            </div>
+
+            <!-- <div class="flex items-center space-x-3">
+                <button onclick="shareWhatsApp()" class="inline-flex items-center px-3.5 py-1.5 text-[11px] font-cinzel font-semibold border border-green-500/80 rounded-full bg-green-950/60 text-green-300 hover:bg-green-700 hover:text-white transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-sm mr-1.5"></i> Share
+                </button>
+                <button onclick="openAdminModal()" class="px-3 py-1.5 text-[11px] font-cinzel font-semibold border border-amber-400/80 text-amber-300 rounded-full hover:bg-amber-400 hover:text-black transition-all">
+                    <i class="fa-solid fa-lock text-xs mr-1"></i> Admin
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-amber-400 p-1">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div> -->
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 border-t border-amber-400/30 flex flex-col text-center font-cinzel uppercase tracking-widest text-xs font-semibold space-y-3" style="background-color: var(--nav-bg);">
+            <a href="#coupleDetails" onclick="toggleMobileMenu()" class="py-1 hover:text-amber-400">The Couple</a>
+            <a href="#events" onclick="toggleMobileMenu()" class="py-1 hover:text-amber-400">Shahi Functions</a>
+            <a href="#rsvp" onclick="toggleMobileMenu()" class="py-1 hover:text-amber-400">RSVP</a>
+            <a href="#blessings" onclick="toggleMobileMenu()" class="py-1 hover:text-amber-400">Aashirvaad</a>
+        </div>
+    </nav>
+
+    <!-- MAIN INVITATION CONTENT SECTION -->
+    <section id="mainContent" class="relative pt-12 pb-20 px-4 sm:px-6" style="background-color: var(--bg-main);">
+        <div class="max-w-5xl mx-auto space-y-16">
+
+            <!-- Ganesh Vandana Banner -->
+            <div class="text-center">
+                <div class="inline-block px-8 py-2.5 rounded-full border border-amber-400/60 shadow-xl" style="background-color: var(--bg-card);">
+                    <p class="font-playfair italic text-sm sm:text-base text-amber-200 tracking-widest">
+                        ॥ श्री गणेशाय नमः ॥
+                    </p>
+                </div>
+                <h2 class="font-script text-amber-300 text-4xl sm:text-6xl mt-4">
+                    Warmly Invite You To Celebrate
+                </h2>
+            </div>
+
+            <!-- Couple & Family Details Section -->
+            <div id="coupleDetails" class="space-y-8">
+                <div class="text-center">
+                    <span class="font-cinzel text-xs uppercase tracking-[0.3em] text-amber-400 font-bold">TWO SOULS, ONE HEART</span>
+                    <h2 class="font-royal-decorative text-3xl sm:text-5xl gold-text-gradient mt-2">THE ROYAL COUPLE</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mt-3"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    
+                    <!-- Groom Card -->
+                    <div class="royal-card p-8 rounded-3xl text-center border-2 border-amber-400/60 flex flex-col justify-between">
+                        <div>
+                            <!-- Groom Photo Frame -->
+                            <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full border-2 border-amber-400 p-1 mx-auto mb-5 overflow-hidden shadow-xl bg-amber-400/10">
+                                <img src="my/groom.jpeg" alt="Lucky Makhija" class="w-full h-full object-cover object-center rounded-full">
+                            </div>
+                            <span class="text-[11px] font-cinzel tracking-[0.25em] text-amber-400 uppercase font-bold">GROOM</span>
+                            <h3 class="font-royal-decorative text-2xl sm:text-3xl text-white font-bold mt-2">Lucky Makhija</h3>
+                            <div class="w-12 h-0.5 bg-amber-400/60 mx-auto my-4"></div>
+                            <p class="text-xs text-gray-300 font-medium">Son of</p>
+                            <p class="text-sm text-amber-200 font-semibold mt-1">Mr. RamKumar Makhijani</p>
+                            <p class="text-sm text-amber-200 font-semibold">& Mrs. Sheela Makhijani</p>
+                        </div>
+                        <p class="text-[11px] italic text-amber-300/80 mt-6">"Walking together towards a lifetime of happiness."</p>
+                    </div>
+
+                    <!-- Bride Card -->
+                    <div class="royal-card p-8 rounded-3xl text-center border-2 border-amber-400/60 flex flex-col justify-between">
+                        <div>
+                            <!-- Bride Photo Frame -->
+                            <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full border-2 border-amber-400 p-1 mx-auto mb-5 overflow-hidden shadow-xl bg-amber-400/10">
+                                <img src="my/bride.jpeg" alt="Niyati Mirani" class="w-full h-full object-cover object-center rounded-full">
+                            </div>
+                            <span class="text-[11px] font-cinzel tracking-[0.25em] text-amber-400 uppercase font-bold">BRIDE</span>
+                            <h3 class="font-royal-decorative text-2xl sm:text-3xl text-white font-bold mt-2">Niyati Mirani</h3>
+                            <div class="w-12 h-0.5 bg-amber-400/60 mx-auto my-4"></div>
+                            <p class="text-xs text-gray-300 font-medium">Daughter of</p>
+                            <p class="text-sm text-amber-200 font-semibold mt-1">Advocate Gopal Kewalram Mirani</p>
+                            <p class="text-sm text-amber-200 font-semibold">& Mrs. Rekha Mirani</p>
+                        </div>
+                        <p class="text-[11px] italic text-amber-300/80 mt-6">"Two families uniting in love, grace & warmth."</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Live Countdown Timer Card -->
+            <div class="royal-card p-8 rounded-3xl border-2 border-amber-400/80 text-center space-y-6">
+                <span class="font-cinzel text-xs uppercase tracking-[0.25em] text-amber-300 font-bold block">Live Countdown to Shubh Vivah</span>
+                
+                <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl mx-auto">
+                    <div class="bg-black/60 p-4 rounded-2xl border border-amber-400/40">
+                        <span id="days" class="font-cinzel text-3xl sm:text-4xl font-bold gold-text-gradient block">00</span>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-200">Days</span>
+                    </div>
+                    <div class="bg-black/60 p-4 rounded-2xl border border-amber-400/40">
+                        <span id="hours" class="font-cinzel text-3xl sm:text-4xl font-bold gold-text-gradient block">00</span>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-200">Hours</span>
+                    </div>
+                    <div class="bg-black/60 p-4 rounded-2xl border border-amber-400/40">
+                        <span id="minutes" class="font-cinzel text-3xl sm:text-4xl font-bold gold-text-gradient block">00</span>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-200">Mins</span>
+                    </div>
+                    <div class="bg-black/60 p-4 rounded-2xl border border-amber-400/40">
+                        <span id="seconds" class="font-cinzel text-3xl sm:text-4xl font-bold gold-text-gradient block">00</span>
+                        <span class="text-[10px] uppercase tracking-wider text-amber-200">Secs</span>
+                    </div>
+                </div>
+
+                <p class="font-cinzel text-xs text-amber-200 uppercase tracking-widest pt-2">
+                    December 01, 2026 • Bhopal, Madhya Pradesh
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SHAHI FUNCTIONS SECTION -->
+    <section id="events" class="py-20 px-4 sm:px-6 border-y border-amber-400/30 relative" style="background-color: var(--bg-main);">
+        <div class="max-w-6xl mx-auto space-y-12">
+            
+            <div class="text-center">
+                <span class="font-cinzel text-xs font-bold uppercase tracking-[0.3em] text-amber-300">SHUBH VIVAH MAHOTSAV</span>
+                <h2 class="font-royal-decorative text-3xl sm:text-5xl text-amber-200 mt-2">SHAHI FUNCTIONS</h2>
+                <div class="w-28 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <div class="event-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Event 1: Sangeet -->
+                <div class="event-card royal-card p-6 rounded-3xl border border-amber-400/50 flex flex-col justify-between hover:scale-[1.02] transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 mb-4 border border-amber-400/60 shadow-inner">
+                            <i class="fa-solid fa-drum text-2xl"></i>
+                        </div>
+                        <span class="text-[11px] font-cinzel font-bold text-amber-300 uppercase tracking-wider block">Sat, Nov 28, 2026</span>
+                        <h3 class="font-royal-decorative text-2xl font-bold text-white mt-1 mb-2">Sur Sangeet</h3>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            An energetic evening of sindhi laade musical performances, DJ beats, and royal Sindhi beats
+                        </p>
+                        <p class="text-xs font-semibold text-amber-200"><i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> Nearby Orange Country, Indore</p>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-amber-400/20 flex justify-between items-center text-xs">
+                        <a href="https://maps.google.com/?q=Orange+Country+Indore" target="_blank" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-300 font-cinzel font-bold hover:bg-amber-400 hover:text-black transition-colors">
+                            <i class="fa-solid fa-map-pin mr-1"></i> Map
+                        </a>
+                        <button onclick="addToCalendar('Sur Sangeet - Lucky & Niyati', '20261128T180000Z', '20261128T230000Z', 'Nearby Orange Country, Indore')" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-200 font-cinzel hover:bg-amber-400/20">
+                            + Calendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 2: Saath Shagun -->
+                <div class="event-card royal-card p-6 rounded-3xl border border-amber-400/50 flex flex-col justify-between hover:scale-[1.02] transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 mb-4 border border-amber-400/60 shadow-inner">
+                            <i class="fa-solid fa-om text-2xl"></i>
+                        </div>
+                        <span class="text-[11px] font-cinzel font-bold text-amber-300 uppercase tracking-wider block">Tue, Dec 01, 2026 • 10:00 AM</span>
+                        <h3 class="font-royal-decorative text-2xl font-bold text-white mt-1 mb-2">Shubh Saath Shagun</h3>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            Sacred morning pooja, haldi rituals, and traditional family blessings invoking divine prosperity.
+                        </p>
+                        <p class="text-xs font-semibold text-amber-200"><i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> Club Cabana, Bhopal</p>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-amber-400/20 flex justify-between items-center text-xs">
+                        <a href="https://maps.google.com/?q=Club+Cabana+Bhopal" target="_blank" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-300 font-cinzel font-bold hover:bg-amber-400 hover:text-black transition-colors">
+                            <i class="fa-solid fa-map-pin mr-1"></i> Map
+                        </a>
+                        <button onclick="addToCalendar('Saath Shagun - Lucky & Niyati', '20261201T100000Z', '20261201T120000Z', 'Club Cabana, Bhopal')" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-200 font-cinzel hover:bg-amber-400/20">
+                            + Calendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 3: Baraat Swagat -->
+                <div class="event-card royal-card p-6 rounded-3xl border border-amber-400/50 flex flex-col justify-between hover:scale-[1.02] transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 mb-4 border border-amber-400/60 shadow-inner">
+                            <i class="fa-solid fa-horse text-2xl"></i>
+                        </div>
+                        <span class="text-[11px] font-cinzel font-bold text-amber-300 uppercase tracking-wider block">Tue, Dec 01, 2026 • 01:00 PM</span>
+                        <h3 class="font-royal-decorative text-2xl font-bold text-white mt-1 mb-2">Baraat Swagat & Milni</h3>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            Grand reception of Groom Lucky Makhija with energetic brass band, dhol beats, and floral garlands.
+                        </p>
+                        <p class="text-xs font-semibold text-amber-200"><i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> Main Gates, Club Cabana, Bhopal</p>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-amber-400/20 flex justify-between items-center text-xs">
+                        <a href="https://maps.google.com/?q=Club+Cabana+Bhopal" target="_blank" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-300 font-cinzel font-bold hover:bg-amber-400 hover:text-black transition-colors">
+                            <i class="fa-solid fa-map-pin mr-1"></i> Map
+                        </a>
+                        <button onclick="addToCalendar('Baraat Swagat - Lucky & Niyati', '20261201T130000Z', '20261201T140000Z', 'Club Cabana, Bhopal')" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-200 font-cinzel hover:bg-amber-400/20">
+                            + Calendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 4: Pavitra Phere -->
+                <div class="event-card royal-card p-6 rounded-3xl border-2 border-amber-400 flex flex-col justify-between hover:scale-[1.02] transition-all">
+                    <div>
+                        <span class="px-3 py-1 bg-amber-400 text-black text-[10px] font-cinzel font-bold rounded-full uppercase inline-block mb-2">Sacred Marriage Vows</span>
+                        <span class="text-[11px] font-cinzel font-bold text-amber-300 uppercase tracking-wider block">Tue, Dec 01, 2026 • 02:00 PM Onwards</span>
+                        <h3 class="font-royal-decorative text-3xl font-bold text-white mt-1 mb-2">Pavitra Phere & Vedi Pujan</h3>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            The holy wedding ceremony under the grand flower mandap as Lucky & Niyati take seven sacred vows around the agni fire.
+                        </p>
+                        <p class="text-xs font-semibold text-amber-200"><i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> Mandap Lawn, Club Cabana, Bhopal</p>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-amber-400/20 flex justify-between items-center text-xs">
+                        <a href="https://maps.google.com/?q=Club+Cabana+Bhopal" target="_blank" class="px-4 py-2 rounded-lg border border-amber-400 text-amber-300 font-cinzel font-bold hover:bg-amber-400 hover:text-black transition-colors">
+                            <i class="fa-solid fa-location-arrow mr-1"></i> Directions to Mandap
+                        </a>
+                        <button onclick="addToCalendar('Phere & Vedi Pujan - Lucky & Niyati', '20261201T140000Z', '20261201T180000Z', 'Club Cabana, Bhopal')" class="px-4 py-2 rounded-lg border border-amber-400/60 text-amber-200 font-cinzel hover:bg-amber-400/20">
+                            + Google Calendar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 5: Reception -->
+                <div class="event-card royal-card p-6 rounded-3xl border border-amber-400/50 flex flex-col justify-between hover:scale-[1.02] transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 mb-4 border border-amber-400/60 shadow-inner">
+                            <i class="fa-solid fa-glass-water-droplet text-2xl"></i>
+                        </div>
+                        <span class="text-[11px] font-cinzel font-bold text-amber-300 uppercase tracking-wider block">Tue, Dec 01, 2026 • 09:00 PM</span>
+                        <h3 class="font-royal-decorative text-2xl font-bold text-white mt-1 mb-2">Shahi Grand Reception</h3>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            A royal gala night with formal greetings, gourmet banquet dinner, cake cutting, and joyous celebrations!
+                        </p>
+                        <p class="text-xs font-semibold text-amber-200"><i class="fa-solid fa-location-dot mr-1.5 text-amber-400"></i> Grand Ballroom, Club Cabana, Bhopal</p>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-amber-400/20 flex justify-between items-center text-xs">
+                        <a href="https://maps.google.com/?q=Club+Cabana+Bhopal" target="_blank" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-300 font-cinzel font-bold hover:bg-amber-400 hover:text-black transition-colors">
+                            <i class="fa-solid fa-map-pin mr-1"></i> Map
+                        </a>
+                        <button onclick="addToCalendar('Shahi Reception - Lucky & Niyati', '20261201T210000Z', '20261201T235900Z', 'Club Cabana, Bhopal')" class="px-3 py-1.5 rounded-lg border border-amber-400/60 text-amber-200 font-cinzel hover:bg-amber-400/20">
+                            + Calendar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- BLESSINGS BOARD SECTION -->
+    <section id="blessings" class="py-20 px-4 sm:px-6 border-y border-amber-400/30" style="background-color: var(--bg-main);">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <div class="text-center">
+                <span class="font-cinzel text-xs font-bold uppercase tracking-[0.3em] text-amber-300">SHUBH AASHIRVAAD</span>
+                <h2 class="font-royal-decorative text-3xl sm:text-5xl text-amber-200 mt-2">BLESSINGS GUESTBOOK</h2>
+                <p class="text-xs text-gray-300 mt-1">Leave your heartfelt wishes for Lucky & Niyati</p>
+                <div class="w-20 h-1 bg-amber-400 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Post Form -->
+            <div class="royal-card p-6 rounded-2xl max-w-xl mx-auto border border-amber-400/40">
+                <div class="space-y-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <input type="text" id="blessingAuthor" placeholder="Your Name" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-amber-400/40 text-xs focus:border-amber-400 focus:outline-none text-white">
+                        <input type="text" id="blessingRelation" placeholder="Relation (e.g. Groom's Friend)" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-amber-400/40 text-xs focus:border-amber-400 focus:outline-none text-white">
+                    </div>
+                    <textarea id="blessingText" rows="3" placeholder="Write your blessings..." class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-amber-400/40 text-xs focus:border-amber-400 focus:outline-none text-white"></textarea>
+                    <button onclick="postBlessing()" class="w-full py-2.5 bg-amber-400 text-black font-cinzel font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-amber-300 transition-colors">
+                        Send Blessings
+                    </button>
+                </div>
+            </div>
+
+            <!-- Display Grid -->
+            <div id="blessingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 text-center border-t-2 border-amber-400 relative overflow-hidden" style="background-color: var(--nav-bg);">
+        <div class="max-w-4xl mx-auto px-4 space-y-4">
+            
+            <div class="flex justify-center items-center space-x-6 text-amber-400 text-2xl">
+                <i class="fa-solid fa-elephant"></i>
+                <span class="font-royal-decorative text-xl sm:text-2xl gold-text-gradient font-bold">Lucky & Niyati</span>
+                <i class="fa-solid fa-elephant transform -scale-x-100"></i>
+            </div>
+
+            <div class="inline-block px-5 py-1.5 border border-amber-400/60 rounded-full bg-black/50 text-amber-300 font-cinzel text-xs tracking-widest font-bold">
+                #LuckyToHaveNiyati
+            </div>
+
+            <p class="font-cinzel text-amber-200 text-xs uppercase tracking-widest">
+                01 December 2026 • Bhopal, Madhya Pradesh
+            </p>
+            
+            <p class="text-[10px] text-gray-400 pt-2">
+                With Compliments From The Mirani Family
+            </p>
+            <br>
+            <p class="text-[10px] text-gray-400 pt-2">
+                All right goes to helloaceinfotech
+            </p>
+        </div>
+    </footer>
+
+    <!-- General Alert Modal -->
+    <div id="generalModal" class="fixed inset-0 z-50 bg-black/80 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="royal-card max-w-md w-full p-8 rounded-3xl text-center space-y-4 border-2 border-amber-400">
+            <h3 id="modalTitle" class="font-royal-decorative text-2xl text-amber-300">Notification</h3>
+            <p id="modalBody" class="text-xs text-gray-200 leading-relaxed"></p>
+            <button onclick="closeModal()" class="px-6 py-2 bg-amber-400 text-black font-cinzel font-bold text-xs uppercase tracking-widest rounded-full">Close</button>
+        </div>
+    </div>
+
+    <!-- Admin Guest List Modal -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-md">
+        <div class="royal-card max-w-4xl w-full p-6 sm:p-8 rounded-3xl max-h-[90vh] overflow-y-auto relative border-2 border-amber-400">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-amber-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div id="adminAuthSection" class="text-center py-8 max-w-sm mx-auto space-y-4">
+                <i class="fa-solid fa-crown text-3xl text-amber-400"></i>
+                <h3 class="font-royal-decorative text-2xl text-amber-300">Admin Authentication</h3>
+                <p class="text-xs text-gray-300">Enter passcode to view confirmed RSVP guestlist</p>
+                <input type="password" id="adminPass" placeholder="Enter Passcode (1234)" class="w-full px-4 py-2.5 rounded-xl bg-black/80 border border-amber-400 text-center text-sm text-amber-300">
+                <button onclick="checkAdminPass()" class="w-full py-2.5 bg-amber-400 text-black font-cinzel font-bold text-xs uppercase tracking-widest rounded-xl">
+                    Unlock Dashboard
+                </button>
+            </div>
+
+            <div id="adminContentSection" class="hidden">
+                <h3 class="font-royal-decorative text-2xl text-amber-300 mb-1">Confirmed RSVP Guestlist</h3>
+                <p class="text-xs text-gray-300 mb-6">List of guests stored in browser memory</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="border-b border-amber-400/40 text-amber-300 font-cinzel uppercase">
+                                <th class="py-2 px-3">Guest Name</th>
+                                <th class="py-2 px-3">Phone</th>
+                                <th class="py-2 px-3">Status</th>
+                                <th class="py-2 px-3">Count</th>
+                                <th class="py-2 px-3">Diet</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody" class="divide-y divide-amber-400/20"></tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center pt-4 border-t border-amber-400/30">
+                    <span id="adminTotalCount" class="text-xs font-semibold text-amber-200">Total: 0</span>
+                    <button onclick="clearAdminRsvps()" class="px-4 py-2 bg-red-800 hover:bg-red-700 text-white text-[11px] font-cinzel uppercase tracking-wider rounded-lg">
+                        Clear Entries
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function openInvitation() {
+            if (!audioPlaying) {
+                toggleAudio();
+            }
+
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 150,
+                    spread: 90,
+                    origin: { y: 0.5 },
+                    colors: ['#D9B56D', '#F3D18A', '#7A1735', '#FFF8EA']
+                });
+            }
+
+            document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const targetDate = new Date("December 01, 2026 13:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-amber-300 font-cinzel text-2xl text-center font-bold'>The Shahi Vivah Is Today!</div>";
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const canvas = document.getElementById("petalsCanvas");
+        const ctx = canvas.getContext("2d");
+        let petals = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        class Petal {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.size = Math.random() * 8 + 6;
+                this.speedY = Math.random() * 1.5 + 0.8;
+                this.angle = Math.random() * 360;
+                this.spin = Math.random() * 0.02 - 0.01;
+                this.color = Math.random() > 0.4 ? "rgba(229, 193, 88, 0.8)" : "rgba(180, 0, 30, 0.7)";
+            }
+            update() {
+                this.y += this.speedY;
+                this.angle += this.spin;
+                if (this.y > canvas.height) {
+                    this.y = -10;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.beginPath();
+                ctx.ellipse(0, 0, this.size, this.size / 1.8, 0, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < 40; i++) petals.push(new Petal());
+
+        function animatePetals() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            petals.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animatePetals);
+        }
+        animatePetals();
+
+        let audioCtx = null;
+        let audioPlaying = false;
+        let audioInterval = null;
+
+        // function toggleAudio() {
+        //     const icon = document.getElementById("audioIcon");
+        //     const text = document.getElementById("audioText");
+        //     const eq = document.getElementById("eqVisualizer");
+
+        //     if (!audioPlaying) {
+        //         if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        //         if (audioCtx.state === "suspended") audioCtx.resume();
+
+        //         const notes = [293.66, 329.63, 369.99, 440.00, 493.88];
+        //         let idx = 0;
+        //         audioInterval = setInterval(() => {
+        //             playSynthTone(notes[idx % notes.length], 1.8);
+        //             idx++;
+        //         }, 750);
+
+        //         audioPlaying = true;
+        //         icon.classList.add("hidden");
+        //         eq.classList.remove("hidden");
+        //         text.innerText = "Playing";
+        //     } else {
+        //         if (audioInterval) clearInterval(audioInterval);
+        //         audioPlaying = false;
+        //         icon.classList.remove("hidden");
+        //         eq.classList.add("hidden");
+        //         text.innerText = "Play Music";
+        //     }
+        // }
+
+//         function toggleAudio() {
+//     const icon = document.getElementById("audioIcon");
+//     const text = document.getElementById("audioText");
+//     const eq = document.getElementById("eqVisualizer");
+//     const music = document.getElementById("weddingMusic");
+
+//     if (!audioPlaying) {
+
+//         music.play();
+
+//         audioPlaying = true;
+
+//         icon.classList.add("hidden");
+//         eq.classList.remove("hidden");
+//         text.innerText = "Playing";
+
+//     } else {
+
+//         music.pause();
+
+//         audioPlaying = false;
+
+//         icon.classList.remove("hidden");
+//         eq.classList.add("hidden");
+//         text.innerText = "Play Music";
+//     }
+// }
+
+function toggleAudio() {
+    const icon = document.getElementById("audioIcon");
+    const text = document.getElementById("audioText");
+    const eq = document.getElementById("eqVisualizer");
+    const music = document.getElementById("weddingMusic");
+
+    if (!audioPlaying) {
+        music.play().then(() => {
+            audioPlaying = true;
+
+            icon.classList.add("hidden");
+            eq.classList.remove("hidden");
+            text.innerText = "Playing";
+        }).catch(() => {
+            console.log("Browser blocked autoplay");
+        });
+
+    } else {
+        music.pause();
+
+        audioPlaying = false;
+        icon.classList.remove("hidden");
+        eq.classList.add("hidden");
+        text.innerText = "Play Music";
+    }
+}
+
+
+
+        function playSynthTone(freq, duration) {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = "sawtooth";
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.02, audioCtx.currentTime + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+
+        function showModal(title, body) {
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalBody").innerText = body;
+            document.getElementById("generalModal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("generalModal").classList.add("hidden");
+        }
+
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById("guestName").value,
+                phone: document.getElementById("guestPhone").value,
+                status: document.getElementById("attendingStatus").value,
+                count: document.getElementById("plusCount").value,
+                diet: document.getElementById("dietaryPref").value
+            };
+
+            const list = JSON.parse(localStorage.getItem("wedding_rsvps_ln") || "[]");
+            list.push(data);
+            localStorage.setItem("wedding_rsvps_ln", JSON.stringify(list));
+
+            if (typeof confetti === 'function') confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+
+            showModal("RSVP Confirmed!", `Thank you ${data.name}. Your response for ${data.count} guest(s) has been recorded.`);
+            document.getElementById("rsvpForm").reset();
+        }
+
+        const defaultBlessings = [
+            { author: "Makhijani Family Elders", relation: "Groom's Side", text: "Wishing Lucky & Niyati eternal love, happiness, and divine prosperity!" },
+            { author: "Mirani Relatives", relation: "Bride's Side", text: "Heartiest congratulations! Eagerly looking forward to the grand celebrations in Bhopal!" }
+        ];
+
+        if (!localStorage.getItem("wedding_blessings_ln")) {
+            localStorage.setItem("wedding_blessings_ln", JSON.stringify(defaultBlessings));
+        }
+
+        function renderBlessings() {
+            const list = JSON.parse(localStorage.getItem("wedding_blessings_ln") || "[]");
+            document.getElementById("blessingsGrid").innerHTML = list.map(b => `
+                <div class="royal-card p-5 rounded-2xl border border-amber-400/30 flex flex-col justify-between">
+                    <p class="font-playfair italic text-xs text-gray-200 mb-3 leading-relaxed">"${escapeHtml(b.text)}"</p>
+                    <div class="border-t border-amber-400/20 pt-2 flex justify-between items-center text-xs">
+                        <div>
+                            <span class="font-bold text-white block">${escapeHtml(b.author)}</span>
+                            <span class="text-[10px] text-amber-300">${escapeHtml(b.relation)}</span>
+                        </div>
+                        <i class="fa-solid fa-hands-praying text-amber-300"></i>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function postBlessing() {
+            const author = document.getElementById("blessingAuthor").value;
+            const relation = document.getElementById("blessingRelation").value || "Guest";
+            const text = document.getElementById("blessingText").value;
+
+            if (!author || !text) {
+                showModal("Incomplete Details", "Please fill in your name and blessings message.");
+                return;
+            }
+
+            const list = JSON.parse(localStorage.getItem("wedding_blessings_ln") || "[]");
+            list.unshift({ author, relation, text });
+            localStorage.setItem("wedding_blessings_ln", JSON.stringify(list));
+
+            document.getElementById("blessingAuthor").value = "";
+            document.getElementById("blessingRelation").value = "";
+            document.getElementById("blessingText").value = "";
+
+            renderBlessings();
+            showModal("Blessings Sent", "Thank you for your warm wishes!");
+        }
+
+        function openAdminModal() {
+            document.getElementById("adminAuthSection").classList.remove("hidden");
+            document.getElementById("adminContentSection").classList.add("hidden");
+            document.getElementById("adminPass").value = "";
+            document.getElementById("adminModal").classList.remove("hidden");
+        }
+
+        function closeAdminModal() {
+            document.getElementById("adminModal").classList.add("hidden");
+        }
+
+        function checkAdminPass() {
+            const pass = document.getElementById("adminPass").value;
+            if (pass === "1234") {
+                document.getElementById("adminAuthSection").classList.add("hidden");
+                document.getElementById("adminContentSection").classList.remove("hidden");
+                renderAdminTable();
+            } else {
+                alert("Incorrect Passcode!");
+            }
+        }
+
+        function renderAdminTable() {
+            const list = JSON.parse(localStorage.getItem("wedding_rsvps_ln") || "[]");
+            document.getElementById("adminTotalCount").innerText = `Total Confirmations: ${list.length}`;
+            const body = document.getElementById("adminTableBody");
+
+            if (list.length === 0) {
+                body.innerHTML = `<tr><td colspan="5" class="py-4 text-center text-gray-400">No responses recorded yet.</td></tr>`;
+            } else {
+                body.innerHTML = list.map(r => `
+                    <tr class="hover:bg-amber-400/10">
+                        <td class="py-2.5 px-3 font-semibold text-white">${escapeHtml(r.name)}</td>
+                        <td class="py-2.5 px-3">${escapeHtml(r.phone)}</td>
+                        <td class="py-2.5 px-3">${escapeHtml(r.status)}</td>
+                        <td class="py-2.5 px-3">${escapeHtml(r.count)}</td>
+                        <td class="py-2.5 px-3">${escapeHtml(r.diet)}</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function clearAdminRsvps() {
+            if (confirm("Reset guestlist entries?")) {
+                localStorage.setItem("wedding_rsvps_ln", "[]");
+                renderAdminTable();
+            }
+        }
+
+        function addToCalendar(title, start, end, loc) {
+            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&location=${encodeURIComponent(loc)}`;
+            window.open(url, '_blank');
+        }
+
+        function shareWhatsApp() {
+            const msg = encodeURIComponent("You are cordially invited to the Shahi Vivah of Lucky Makhija & Niyati Mirani! View invitation: " + window.location.href);
+            window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank');
+        }
+
+        function escapeHtml(str) {
+            return (str || '').replace(/[&<>"']/g, function(m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+            });
+        }
+
+        window.onload = function() {
+            renderBlessings();
+        };
+    </script>
+</body>
+</html>
